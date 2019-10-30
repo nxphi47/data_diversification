@@ -158,7 +158,7 @@ fairseq-preprocess --source-lang en --target-lang de \
   --destdir $out \
   --nwordssrc 0 --nwordstgt 0 \
   --workers 16 \
-  --srcdict $out/dict.en.txt --tgtdict $out/dict.fr.txt
+  --srcdict $out/dict.en.txt --tgtdict $out/dict.de.txt
 
 ```
 
