@@ -13,9 +13,12 @@ Save the processed data as ``data_fairseq/translate_ende_wmt16_bpe32k``
 Save the raw data (which contains the file train.tok.clean.bpe.32000.en) to ``raw_data/wmt_ende`` 
 
 **Step 2**: copy the same data to ``data_fairseq/translate_deen_wmt16_bpe32k`` for De-En
+```bash
+cp -r data_fairseq/translate_ende_wmt16_bpe32k data_fairseq/translate_deen_wmt16_bpe32k
+```
 
 
-**Step 3**: Train forward models
+**Step 3**: Train forward models. Step 3-4 can be done all in parallel, if you have more than 8 GPUs, you can run all 6 models at once. 
 ```bash
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 export seed_prefix=100
@@ -153,6 +156,7 @@ mkdir -p raw_data/aug_ende_wmt16_bpe32k_s3_r1
 python -u combine_corpus.py --src en --tgt de --ori $ori --hypos $prefix --dir raw_data/aug_ende_wmt16_bpe32k_s3_r1 --out train
 
 export out=data_fairseq/translate_ende_aug_b5_r1_s3_nodup_wmt16_bpe32k
+# Copy the original data to new augmented data. We keep the valid/test set the same, only change the train set
 cp -r data_fairseq/translate_ende_wmt16_bpe32k $out
 
 fairseq-preprocess --source-lang en --target-lang de \
@@ -162,6 +166,7 @@ fairseq-preprocess --source-lang en --target-lang de \
   --workers 16 \
   --srcdict $out/dict.en.txt --tgtdict $out/dict.de.txt
 
+# This should report around 27M sentences
 ```
 
 **Step 8**: Train final models
@@ -222,6 +227,7 @@ perl -ple 's{(\S)-(\S)}{$1 ##AT##-##AT## $2}g' < ${hypo} > ${hypo_atat}
 perl -ple 's{(\S)-(\S)}{$1 ##AT##-##AT## $2}g' < ${ref} > ${ref_atat}
 echo "------ Score BLEU ------------"
 $(which fairseq-score) --sys ${hypo_atat} --ref ${ref_atat}
+# expected: BLEU4 = 30.7 
 ```
 
 
