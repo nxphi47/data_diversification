@@ -1,7 +1,10 @@
 # Data Diversification: A Universally Elegant Strategy For Neural Machine Translation
 
-## Pretrained Models
+## Diversified Pretrained Models
 
+Model | Description | Dataset | Download
+---|---|---|---
+`WMT'16 En-De` | Transformer | [WMT16 English-German](https://drive.google.com/uc?export=download&id=0B_bZck-ksdkpM25jRUN2X2UxMm8) | model: <br> [download (.tar.bz2)](notready) <br> newstest2014: <br> [download (.tar.bz2)](notready) 
 
 ## Instruction To train WMT English-German
 
