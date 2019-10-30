@@ -1,4 +1,4 @@
-# Data Diversification: A Universally Elegant ...
+# Data Diversification: A Universally Elegant Strategy For Neural Machine Translation
 
 ## Pretrained Models
 
@@ -95,9 +95,9 @@ fairseq-generate ${data_dir} \
     -s en -t de \
     --path ${best_file} \
     --gen-subset train \
-    --max-tokens ${infer_bsz} --beam ${beam}  --lenpen ${lenpen} | dd of=$gen_out && \
-grep ^S ${gen_out} | cut -f2- > $gen_out.en && \
-grep ^H ${gen_out} | cut -f3- > $gen_out.de && \
+    --max-tokens ${infer_bsz} --beam ${beam}  --lenpen ${lenpen} | dd of=$gen_out
+grep ^S ${gen_out} | cut -f2- > $gen_out.en
+grep ^H ${gen_out} | cut -f3- > $gen_out.de
 done
 
 ```
@@ -123,9 +123,9 @@ fairseq-generate ${data_dir} \
     -s de -t en \
     --path ${best_file} \
     --gen-subset train \
-    --max-tokens ${infer_bsz} --beam ${beam}  --lenpen ${lenpen} | dd of=$gen_out && \
-grep ^S ${gen_out} | cut -f2- > $gen_out.de && \
-grep ^H ${gen_out} | cut -f3- > $gen_out.en && \
+    --max-tokens ${infer_bsz} --beam ${beam}  --lenpen ${lenpen} | dd of=$gen_out
+grep ^S ${gen_out} | cut -f2- > $gen_out.de
+grep ^H ${gen_out} | cut -f3- > $gen_out.en
 done
 
 ```
