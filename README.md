@@ -17,7 +17,7 @@ Save the raw data (which contains the file train.tok.clean.bpe.32000.en) to ``ra
 
 **Step 3**: Train forward models
 ```bash
-
+export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 export seed_prefix=100
 export problem=translate_ende_wmt16_bpe32k
 export model_name=big_tfm_baseline_df3584_s${seed_prefix}
@@ -47,7 +47,7 @@ done
 
 **Step 4**: Train backward models
 ```bash
-
+export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 export seed_prefix=101
 export problem=translate_deen_wmt16_bpe32k
 export model_name=big_tfm_baseline_df3584_s${seed_prefix}
@@ -78,6 +78,7 @@ done
 **Step 5**: Inference forward models
 
 ```bash
+export CUDA_VISIBLE_DEVICES=0
 export seed_prefix=100
 export problem=translate_ende_wmt16_bpe32k
 export model_name=big_tfm_baseline_df3584_s${seed_prefix}
@@ -106,6 +107,7 @@ done
 **Step 6**: Inference backward models
 
 ```bash
+export CUDA_VISIBLE_DEVICES=0
 export seed_prefix=101
 export problem=translate_deen_wmt16_bpe32k
 export model_name=big_tfm_baseline_df3584_s${seed_prefix}
@@ -165,7 +167,7 @@ fairseq-preprocess --source-lang en --target-lang de \
 **Step 8**: Train final models
 
 ```bash
-
+export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 export seed_prefix=200
 export problem=translate_ende_aug_b5_r1_s3_nodup_wmt16_bpe32k
 export model_name=big_tfm_baseline_df3584_s${seed_prefix}
