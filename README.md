@@ -1,10 +1,23 @@
-# Data Diversification: A Universally Elegant Strategy For Neural Machine Translation
+# Data Diversification: An Elegant Strategy For Neural Machine Translation
+Authors: Xuan-Phi Nguyen, Shafiq Joty, Wu Kui, Ai Ti Aw
 
-## Diversified Pretrained Models
+Paper link: [https://arxiv.org/abs/1911.01986](https://arxiv.org/abs/1911.01986)
 
-Model | Description | Dataset | Download
----|---|---|---
-`WMT'16 En-De` | Transformer | [WMT16 English-German](https://drive.google.com/uc?export=download&id=0B_bZck-ksdkpM25jRUN2X2UxMm8) | model: <br> [download (.tar.bz2)](notready) <br> newstest2014: <br> [download (.tar.bz2)](notready) 
+# Citation
+
+Please cite as:
+
+```bibtex
+@misc{nguyen2019data,
+    title={Data Diversification: An Elegant Strategy For Neural Machine Translation},
+    author={Xuan-Phi Nguyen and Shafiq Joty and Wu Kui and Ai Ti Aw},
+    year={2019},
+    eprint={1911.01986},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL}
+}
+```
+
 
 ## Instruction To train WMT English-German
 
