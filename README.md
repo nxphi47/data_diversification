@@ -247,9 +247,4 @@ $(which fairseq-score) --sys ${hypo_atat} --ref ${ref_atat}
 ```
 
 
-## Citation
-
-```bibtex
-```
-
 
