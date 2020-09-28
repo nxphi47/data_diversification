@@ -1,5 +1,6 @@
-# Data Diversification: An Elegant Strategy For Neural Machine Translation
-Authors: Xuan-Phi Nguyen, Shafiq Joty, Wu Kui, Ai Ti Aw
+# Data Diversification: A Simple Strategy For Neural Machine Translation
+#### Accepted as conference paper at 34th Conference on Neural Information Processing Systems (NeurIPS 2020), Vancouver, Canada, 2020
+#### Authors: Xuan-Phi Nguyen, Shafiq Joty, Wu Kui, Ai Ti Aw
 
 Paper link: [https://arxiv.org/abs/1911.01986](https://arxiv.org/abs/1911.01986)
 
