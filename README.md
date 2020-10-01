@@ -9,13 +9,12 @@ Paper link: [https://arxiv.org/abs/1911.01986](https://arxiv.org/abs/1911.01986)
 Please cite as:
 
 ```bibtex
-@misc{nguyen2019data,
-    title={Data Diversification: An Elegant Strategy For Neural Machine Translation},
-    author={Xuan-Phi Nguyen and Shafiq Joty and Wu Kui and Ai Ti Aw},
-    year={2019},
-    eprint={1911.01986},
-    archivePrefix={arXiv},
-    primaryClass={cs.CL}
+@incollection{nguyen2020data,
+title = {Data Diversification: A Simple Strategy For Neural Machine Translation},
+author = {Xuan-Phi Nguyen and Shafiq Joty and Wu Kui and Ai Ti Aw},
+booktitle = {Advances in Neural Information Processing Systems 32},
+year = {2020},
+publisher = {Curran Associates, Inc.},
 }
 ```
 
